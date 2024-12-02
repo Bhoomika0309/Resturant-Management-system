@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #444;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+            background-image: url('https://hips.hearstapps.com/hmg-prod/images/delish-191119-butter-chicken-0375-landscape-pf-1574729676.jpg?crop=1xw:0.8435280189423836xh;center,top&resize=1200:*');
+            width: 20px;
+            height: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>New Order</h1>
+    <form action="/submit-order" method="post">
+        <!-- Starters -->
+        <h3>Starters</h3>
+        <label><input type="checkbox" name="dishes" value="Chicken Tikka"> Chicken Tikka</label><br>
+        <label><input type="checkbox" name="dishes" value="Paneer Tikka"> Paneer Tikka</label><br>
+        <!-- Add more starters here -->
+
+        <!-- Main Course -->
+        <h3>Main Course</h3>
+        <label><input type="checkbox" name="dishes" value="Butter Chicken"> Butter Chicken</label><br>
+        <label><input type="checkbox" name="dishes" value="Veg Biryani"> Veg Biryani</label><br>
+        <!-- Add more main course items here -->
+
+        <!-- Desserts -->
+        <h3>Desserts</h3>
+        <label><input type="checkbox" name="dishes" value="Gulab Jamun"> Gulab Jamun</label><br>
+        <label><input type="checkbox" name="dishes" value="Rasgulla"> Rasgulla</label><br>
+        <!-- Add more desserts here -->
+
+        <label for="table">Choose Table</label>
+        <select id="table" name="table">
+            <option value="1">Table 1</option>
+            <option value="2">Table 2</option>
+            <option value="3">Table 3</option>
+            <option value="4">Table 4</option>
+            <option value="5">Table 5</option>
+            <option value="6">Table 6</option>
+        </select>
+
+
+        <button type="submit">Confirm Order</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN PORTAL</title>
+    <style>
+        /* Basic styles for accordion */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .accordion {
+            max-width: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-section {
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .accordion-section:hover {
+            background-color: #e0e0e0;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+        }
+
+        .active .accordion-content {
+            display: block;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #d3d0d067;
+        }
+
+        .logb {
+            height: 40px;
+            /* Increased height */
+            background-color: #198e19;
+            /* Different color */
+            color: #fff;
+            /* Text color */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+            width: 80px;
+            margin-right: 30px;
+        }
+
+        button:hover {
+            background-color: #0d5116;
+            /* Darker color on hover */
+        }
+
+        .logo {
+            font-family: ALGERIAN, Arial, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
+            margin-right: auto;
+            margin-left: 30px;
+
+            /* Pushes the logout button to the right */
+            display: flex;
+            /* Ensure proper alignment of logo elements */
+            align-items: center;
+            /* Align elements vertically */
+            pointer-events: none;
+        }
+
+        .logo span {
+            margin-left: 5px;
+            /* Adjust spacing between letters */
+        }
+
+        .logo .reversed {
+            display: inline-block;
+            transform: scaleX(-1);
+            margin-left: 1px;
+            /* Adjust spacing between letters */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <span>BH</span>
+            <!-- <span class="reversed">B</span> -->
+        </div>
+        <form action="/alogout" method="post">
+            <button type="submit" class="logb">Sign Out</button>
+        </form>
+    </nav>
+    <div class="accordion">
+        <div class="accordion-section">
+            <h2>Add Item</h2>
+            <div class="accordion-content">
+                <form id="addItemForm" action="/add-item" method="post" class="form-container">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="starter">Starter</option>
+                        <option value="main_course">Main Course</option>
+                        <option value="desserts">Desserts</option>
+                    </select>
+                    <label for="dishName">Dish Name:</label>
+                    <input type="text" id="dishName" name="dishName" required>
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" name="price" required>
+                    <button type="submit">Add Item</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Other accordion sections -->
+    </div>
+
+    <script>
+        // JavaScript for toggling accordion sections
+        const accordionSections = document.querySelectorAll('.accordion-section');
+
+        accordionSections.forEach(section => {
+            section.addEventListener('click', () => {
+                section.classList.toggle('active');
+            });
+        });
+
+        // Stop click event propagation for form elements
+        const formElements = document.querySelectorAll('.form-container *');
+        formElements.forEach(element => {
+            element.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
+    </script>
+</body>
+
+</html>

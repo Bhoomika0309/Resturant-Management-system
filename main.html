@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            background-image: url('https://img.freepik.com/free-photo/tabletop-looking-out-empty-restaurant_23-2147701293.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703894400&semt=ais');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 100px;
+            color: #070707c5;
+        }
+
+        button {
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-size: 120px;
+            font-weight: bold;
+            color: #333;
+            font-family: ALGERIAN, Arial, sans-serif;
+        }
+
+        .reversed {
+            display: inline-block;
+            transform: scaleX(-1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button:last-child {
+            background-color: #f44336;
+        }
+
+        button:last-child:hover {
+            background-color: #e53935;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        BH
+        <!-- <span class="reversed">B</span> -->
+    </div>
+    <div>
+        <button onclick="location.href='/employee-login'">Employee</button>
+        <button onclick="location.href='/adminlogin'">Admin</button>
+    </div>
+</body>
+
+</html>
